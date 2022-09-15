@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Vacation 2022</title>
+  </head>
+  <body>
+    <h1>Create A New Item</h1>
+    <form action="items/createItem" method="POST">
+      <input type="text" placeholder="Item" name="item" />
+      <label for="people">Who Is Bringing</label>
+      <select name="person" id="people">
+        <option value="Mom and Dad">Mom and Dad</option>
+        <option value="Tracy and Joe">Tracy and Joe</option>
+        <option value="Maggie and Joe">Maggie and Joe</option>
+        <option value="Everyone">Everyone</option>
+      </select>
+      <input type="submit" />
+    </form>
+
+    <h2>Items Being Brought</h2>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Who Is Bringing</th>
+      </tr>
+      <% items.forEach(el => { %>
+      <tr class="item" data-id="<%= el._id %>">
+        <td><%= el.item %></td>
+        <td><%= el.person %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
