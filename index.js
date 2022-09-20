@@ -3,6 +3,7 @@ const app = express();
 const connectDB = require("./config/database");
 const homeRoutes = require("./routes/home");
 const itemRoutes = require("./routes/items");
+import path from "path";
 
 require("dotenv").config({ path: "./config/.env" });
 
