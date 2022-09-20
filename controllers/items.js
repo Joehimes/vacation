@@ -4,7 +4,7 @@ module.exports = {
   getItems: async (req, res) => {
     try {
       const allItems = await Item.find();
-      res.render("items.ejs", { items: allItems });
+      res.render("items", { items: allItems });
     } catch (err) {
       console.log(err);
     }
